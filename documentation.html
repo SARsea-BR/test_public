@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module app</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>app</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/felipe/work/sarsea_br/cross_assignment_c4pm/src/app.py">/home/felipe/work/sarsea_br/cross_assignment_c4pm/src/app.py</a></font></td></tr></table>
+    <p><tt>Versao&nbsp;mais&nbsp;enxuta&nbsp;do&nbsp;Cross-spec_assignment&nbsp;C4PM</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="numpy.html">numpy</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-c4pm"><strong>c4pm</strong></a>(w, c, spec_a, spec_b)</dt><dd><tt>Function&nbsp;to&nbsp;run&nbsp;the&nbsp;C4PM&nbsp;cross-assignment<br>
+&nbsp;<br>
+spec_args:<br>
+&nbsp;&nbsp;&nbsp;w&nbsp;(list):&nbsp;wave&nbsp;parameter&nbsp;weight&nbsp;vector&nbsp;(list&nbsp;of&nbsp;floats)&nbsp;[Hs,&nbsp;Dir,&nbsp;T,&nbsp;spr]<br>
+&nbsp;&nbsp;&nbsp;c&nbsp;(list):&nbsp;wave&nbsp;parameter&nbsp;control&nbsp;vector&nbsp;(list&nbsp;of&nbsp;floats)&nbsp;[Hs,&nbsp;Dir,&nbsp;T,&nbsp;spr]<br>
+&nbsp;&nbsp;&nbsp;spec_a&nbsp;(list):&nbsp;spec_spec_a&nbsp;partition&nbsp;information&nbsp;(list&nbsp;of&nbsp;lists&nbsp;of&nbsp;floats)&nbsp;[Hs,&nbsp;Dir,&nbsp;T,&nbsp;spr]<br>
+&nbsp;&nbsp;&nbsp;spec_b&nbsp;(list):&nbsp;spec_spec_b&nbsp;partition&nbsp;information&nbsp;(list&nbsp;of&nbsp;lists&nbsp;of&nbsp;floats)&nbsp;[Hs,&nbsp;Dir,&nbsp;T,&nbsp;spr]<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;list:&nbsp;Cross-assignment&nbsp;result-&nbsp;list&nbsp;of&nbsp;(spec_ai,spec_bj)-tuples</tt></dd></dl>
+ <dl><dt><a name="-calculate_spectral_distance"><strong>calculate_spectral_distance</strong></a>(a, b, w, c, x)</dt><dd><tt>Function&nbsp;to&nbsp;calculate&nbsp;the&nbsp;spectral&nbsp;distance&nbsp;between&nbsp;spec&nbsp;spec_a&nbsp;and&nbsp;spec_b.&nbsp;Eq&nbsp;4.<br>
+&nbsp;<br>
+spec_args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;a&nbsp;(list):&nbsp;vector&nbsp;of&nbsp;wave&nbsp;parameters&nbsp;from&nbsp;a&nbsp;partition&nbsp;of&nbsp;spec_a&nbsp;(hs,&nbsp;dp,&nbsp;tp,&nbsp;spr)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;b&nbsp;(list):&nbsp;vector&nbsp;of&nbsp;wave&nbsp;parameters&nbsp;from&nbsp;a&nbsp;partition&nbsp;of&nbsp;spec_b&nbsp;(hs,&nbsp;dp,&nbsp;tp,&nbsp;spr)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;w&nbsp;(list):&nbsp;weight&nbsp;vector&nbsp;(w_hs,&nbsp;w_dp,&nbsp;w_tp,&nbsp;w_spr)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;c&nbsp;(list):&nbsp;control&nbsp;vector&nbsp;(c_hs,&nbsp;c_dp,&nbsp;c_tp,&nbsp;c_spr)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;x&nbsp;(integer):&nbsp;wave&nbsp;parameter/column&nbsp;index:&nbsp;0:hs,&nbsp;1:dp,&nbsp;2:tp,&nbsp;3:spr<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;float32:&nbsp;spectral&nbsp;distance&nbsp;d(spec_ai,spec_bj)</tt></dd></dl>
+ <dl><dt><a name="-dv_ang"><strong>dv_ang</strong></a>(u1, u2)</dt><dd><tt>spec_angular&nbsp;variability:&nbsp;&nbsp;v_theta(x,y)&nbsp;-&nbsp;Eq&nbsp;7<br>
+&nbsp;<br>
+spec_args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;u1&nbsp;(float32):&nbsp;Direction&nbsp;1&nbsp;in&nbsp;degrees<br>
+&nbsp;&nbsp;&nbsp;&nbsp;u2&nbsp;(float32):&nbsp;Direction&nbsp;2&nbsp;in&nbsp;degrees<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;float32:&nbsp;spec_angular&nbsp;variability&nbsp;between&nbsp;u1&nbsp;and&nbsp;u2</tt></dd></dl>
+ <dl><dt><a name="-dv_max"><strong>dv_max</strong></a>(u1, u2)</dt><dd><tt>General&nbsp;variability:&nbsp;&nbsp;v_z&nbsp;&nbsp;-&nbsp;&nbsp;Eq&nbsp;6&nbsp;<br>
+&nbsp;<br>
+spec_args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;u1&nbsp;(float32):&nbsp;Parameter&nbsp;1&nbsp;(hs,&nbsp;tp,&nbsp;spr)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;u2&nbsp;(float32):&nbsp;Parameter&nbsp;2&nbsp;(hs,&nbsp;tp,&nbsp;spr)<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;float32:&nbsp;General&nbsp;variability&nbsp;between&nbsp;u1&nbsp;and&nbsp;u2</tt></dd></dl>
+ <dl><dt><a name="-linear_sum_assignment"><strong>linear_sum_assignment</strong></a>(...)</dt><dd><tt>Solve&nbsp;the&nbsp;linear&nbsp;sum&nbsp;assignment&nbsp;problem.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+cost_matrix&nbsp;:&nbsp;array<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;cost&nbsp;matrix&nbsp;of&nbsp;the&nbsp;bipartite&nbsp;graph.<br>
+&nbsp;<br>
+maximize&nbsp;:&nbsp;bool&nbsp;(default:&nbsp;False)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Calculates&nbsp;a&nbsp;maximum&nbsp;weight&nbsp;matching&nbsp;if&nbsp;true.<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+row_ind,&nbsp;col_ind&nbsp;:&nbsp;array<br>
+&nbsp;&nbsp;&nbsp;&nbsp;An&nbsp;array&nbsp;of&nbsp;row&nbsp;indices&nbsp;and&nbsp;one&nbsp;of&nbsp;corresponding&nbsp;column&nbsp;indices&nbsp;giving<br>
+&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;optimal&nbsp;assignment.&nbsp;The&nbsp;cost&nbsp;of&nbsp;the&nbsp;assignment&nbsp;can&nbsp;be&nbsp;computed<br>
+&nbsp;&nbsp;&nbsp;&nbsp;as&nbsp;``cost_matrix[row_ind,&nbsp;col_ind].sum()``.&nbsp;The&nbsp;row&nbsp;indices&nbsp;will&nbsp;be<br>
+&nbsp;&nbsp;&nbsp;&nbsp;sorted;&nbsp;in&nbsp;the&nbsp;case&nbsp;of&nbsp;a&nbsp;square&nbsp;cost&nbsp;matrix&nbsp;they&nbsp;will&nbsp;be&nbsp;equal&nbsp;to<br>
+&nbsp;&nbsp;&nbsp;&nbsp;``numpy.arange(cost_matrix.shape[0])``.<br>
+&nbsp;<br>
+See&nbsp;Also<br>
+--------<br>
+scipy.sparse.csgraph.min_weight_full_bipartite_matching&nbsp;:&nbsp;for&nbsp;sparse&nbsp;inputs<br>
+&nbsp;<br>
+Notes<br>
+-----<br>
+&nbsp;<br>
+The&nbsp;linear&nbsp;sum&nbsp;assignment&nbsp;problem&nbsp;[1]_&nbsp;is&nbsp;also&nbsp;known&nbsp;as&nbsp;minimum&nbsp;weight<br>
+matching&nbsp;in&nbsp;bipartite&nbsp;graphs.&nbsp;A&nbsp;problem&nbsp;instance&nbsp;is&nbsp;described&nbsp;by&nbsp;a&nbsp;matrix<br>
+C,&nbsp;where&nbsp;each&nbsp;C[i,j]&nbsp;is&nbsp;the&nbsp;cost&nbsp;of&nbsp;matching&nbsp;vertex&nbsp;i&nbsp;of&nbsp;the&nbsp;first&nbsp;partite<br>
+set&nbsp;(a&nbsp;'worker')&nbsp;and&nbsp;vertex&nbsp;j&nbsp;of&nbsp;the&nbsp;second&nbsp;set&nbsp;(a&nbsp;'job').&nbsp;The&nbsp;goal&nbsp;is&nbsp;to<br>
+find&nbsp;a&nbsp;complete&nbsp;assignment&nbsp;of&nbsp;workers&nbsp;to&nbsp;jobs&nbsp;of&nbsp;minimal&nbsp;cost.<br>
+&nbsp;<br>
+Formally,&nbsp;let&nbsp;X&nbsp;be&nbsp;a&nbsp;boolean&nbsp;matrix&nbsp;where&nbsp;:math:`X[i,j]&nbsp;=&nbsp;1`&nbsp;iff&nbsp;row&nbsp;i&nbsp;is<br>
+assigned&nbsp;to&nbsp;column&nbsp;j.&nbsp;Then&nbsp;the&nbsp;optimal&nbsp;assignment&nbsp;has&nbsp;cost<br>
+&nbsp;<br>
+..&nbsp;math::<br>
+&nbsp;&nbsp;&nbsp;&nbsp;\min&nbsp;\sum_i&nbsp;\sum_j&nbsp;C_{i,j}&nbsp;X_{i,j}<br>
+&nbsp;<br>
+where,&nbsp;in&nbsp;the&nbsp;case&nbsp;where&nbsp;the&nbsp;matrix&nbsp;X&nbsp;is&nbsp;square,&nbsp;each&nbsp;row&nbsp;is&nbsp;assigned&nbsp;to<br>
+exactly&nbsp;one&nbsp;column,&nbsp;and&nbsp;each&nbsp;column&nbsp;to&nbsp;exactly&nbsp;one&nbsp;row.<br>
+&nbsp;<br>
+This&nbsp;function&nbsp;can&nbsp;also&nbsp;solve&nbsp;a&nbsp;generalization&nbsp;of&nbsp;the&nbsp;classic&nbsp;assignment<br>
+problem&nbsp;where&nbsp;the&nbsp;cost&nbsp;matrix&nbsp;is&nbsp;rectangular.&nbsp;If&nbsp;it&nbsp;has&nbsp;more&nbsp;rows&nbsp;than<br>
+columns,&nbsp;then&nbsp;not&nbsp;every&nbsp;row&nbsp;needs&nbsp;to&nbsp;be&nbsp;assigned&nbsp;to&nbsp;a&nbsp;column,&nbsp;and&nbsp;vice<br>
+versa.<br>
+&nbsp;<br>
+This&nbsp;implementation&nbsp;is&nbsp;a&nbsp;modified&nbsp;Jonker-Volgenant&nbsp;algorithm&nbsp;with&nbsp;no<br>
+initialization,&nbsp;described&nbsp;in&nbsp;ref.&nbsp;[2]_.<br>
+&nbsp;<br>
+..&nbsp;versionadded::&nbsp;0.17.0<br>
+&nbsp;<br>
+References<br>
+----------<br>
+&nbsp;<br>
+..&nbsp;[1]&nbsp;<a href="https://en.wikipedia.org/wiki/Assignment_problem">https://en.wikipedia.org/wiki/Assignment_problem</a><br>
+&nbsp;<br>
+..&nbsp;[2]&nbsp;DF&nbsp;Crouse.&nbsp;On&nbsp;implementing&nbsp;2D&nbsp;rectangular&nbsp;assignment&nbsp;algorithms.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*IEEE&nbsp;Transactions&nbsp;on&nbsp;Aerospace&nbsp;and&nbsp;Electronic&nbsp;Systems*,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;52(4):1679-1696,&nbsp;August&nbsp;2016,&nbsp;:doi:`10.1109/TAES.2016.140952`<br>
+&nbsp;<br>
+Examples<br>
+--------<br>
+&gt;&gt;&gt;&nbsp;import&nbsp;numpy&nbsp;as&nbsp;np<br>
+&gt;&gt;&gt;&nbsp;cost&nbsp;=&nbsp;np.array([[4,&nbsp;1,&nbsp;3],&nbsp;[2,&nbsp;0,&nbsp;5],&nbsp;[3,&nbsp;2,&nbsp;2]])<br>
+&gt;&gt;&gt;&nbsp;from&nbsp;scipy.optimize&nbsp;import&nbsp;linear_sum_assignment<br>
+&gt;&gt;&gt;&nbsp;row_ind,&nbsp;col_ind&nbsp;=&nbsp;<a href="#-linear_sum_assignment">linear_sum_assignment</a>(cost)<br>
+&gt;&gt;&gt;&nbsp;col_ind<br>
+array([1,&nbsp;0,&nbsp;2])<br>
+&gt;&gt;&gt;&nbsp;cost[row_ind,&nbsp;col_ind].sum()<br>
+5</tt></dd></dl>
+</td></tr></table>
+</body></html>
